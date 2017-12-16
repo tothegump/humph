@@ -1,0 +1,8 @@
+.idea
+humph.egg-info/*
+humph.egg-info/PKG-INFO
+*.pyc
+build/
+.DS_Store
+MANIFEST
+dist/
