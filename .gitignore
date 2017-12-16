@@ -1,8 +1,15 @@
-.idea
-humph.egg-info/*
-humph.egg-info/PKG-INFO
-*.pyc
-build/
-.DS_Store
-MANIFEST
+*.egg-info
 dist/
+build/
+
+# Ignore useless OS X's dirs:
+.DS_Store
+
+# Py.test
+/.cache/
+
+# IDE
+.idea
+MANIFEST
+
+__pycache__/
