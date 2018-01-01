@@ -1,7 +1,5 @@
-import http
-
 from humph.request import Request
-from humph.response import Response
+from humph.router import get_route
 
 
 def request_handler(environ, start_response):
@@ -10,7 +8,8 @@ def request_handler(environ, start_response):
     start_response accept two required positional args: status and response_header, and one optional arg: exec_info
     """
     request = Request(environ)
-    response = Response('Hi~, man, give me five.')
+    handle = get_route(request)
+    response = handle(request)
     start_response(
         response.status,
         response.headers
@@ -28,7 +27,3 @@ def run_server(host='localhost', port=8080):
         print('shutting down')
         import sys
         sys.exit()
-
-
-if __name__ == '__main__':
-    run_server()
